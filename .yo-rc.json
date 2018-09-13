@@ -1,0 +1,51 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "ar.com.anelsoftware.app",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "5.3.1",
+    "applicationType": "monolith",
+    "baseName": "Queen",
+    "packageName": "ar.com.anelsoftware.app",
+    "packageFolder": "ar/com/anelsoftware/app",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmY0ZDNkOTAzMTRkMjFhNDg3ZTI3ZTU5NzRkMGE1Y2Y3NjFmN2MwOGUyMmJjZTRhZmE5Y2MwMzVmMzBhYWY2NjNhMmFkYmJlYjliMzc0MTBiOWNmMjBhNTYyYmQ1MDg5NmQyYzA0YTY4YjAwMzhiMWI5MjM1OWUxNWI5MzJkY2Y=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-docker",
+        "version": "2.5.0"
+      },
+      {
+        "name": "generator-jhipster-audit-helper",
+        "version": "1.0.3"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": [
+      "es",
+      "en"
+    ]
+  }
+}
