@@ -1,0 +1,10 @@
+{
+    "queenApp": {
+        "Estado" : {
+            "null": "",
+            "NUEVO": "NUEVO",
+            "USADO": "USADO",
+            "REACONDICIONADO": "REACONDICIONADO"
+        }
+    }
+}

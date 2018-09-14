@@ -10,6 +10,7 @@
                 "empresa": "Empresa",
                 "categoria": "Categoria",
                 "marca": "Marca",
+                "producto": "Producto",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
