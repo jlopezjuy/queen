@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="marca">
+            <h2><span jhiTranslate="queenApp.marca.detail.title">Marca</span> {{marca.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="queenApp.marca.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{marca.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="queenApp.marca.logo">Logo</span></dt>
+                <dd>
+                    <div *ngIf="marca.logo">
+                        <a (click)="openFile(marca.logoContentType, marca.logo)">
+                            <img [src]="'data:' + marca.logoContentType + ';base64,' + marca.logo" style="max-width: 100%;" alt="marca image"/>
+                        </a>
+                        {{marca.logoContentType}}, {{byteSize(marca.logo)}}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/marca', marca.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
