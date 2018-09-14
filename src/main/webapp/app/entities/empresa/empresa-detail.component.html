@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="empresa">
+            <h2><span jhiTranslate="queenApp.empresa.detail.title">Empresa</span> {{empresa.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="queenApp.empresa.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{empresa.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="queenApp.empresa.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{empresa.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="queenApp.empresa.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{empresa.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="queenApp.empresa.cuit">Cuit</span></dt>
+                <dd>
+                    <span>{{empresa.cuit}}</span>
+                </dd>
+                <dt><span jhiTranslate="queenApp.empresa.rentas">Rentas</span></dt>
+                <dd>
+                    <span>{{empresa.rentas}}</span>
+                </dd>
+                <dt><span jhiTranslate="queenApp.empresa.user">User</span></dt>
+                <dd>
+                    {{empresa.userLogin}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/empresa', empresa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
