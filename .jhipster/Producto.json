@@ -1,7 +1,20 @@
 {
     "fluentMethods": true,
     "clientRootFolder": "",
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "marca",
+            "otherEntityName": "marca",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "producto"
+        },
+        {
+            "relationshipName": "categoria",
+            "otherEntityName": "categoria",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "producto"
+        }
+    ],
     "fields": [
         {
             "fieldName": "nombre",

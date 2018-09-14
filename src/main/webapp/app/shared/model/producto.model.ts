@@ -1,3 +1,6 @@
+import { IMarca } from 'app/shared/model//marca.model';
+import { ICategoria } from 'app/shared/model//categoria.model';
+
 export const enum Estado {
     NUEVO = 'NUEVO',
     USADO = 'USADO',
@@ -12,6 +15,8 @@ export interface IProducto {
     detalle?: string;
     visible?: boolean;
     estado?: Estado;
+    marcas?: IMarca[];
+    categorias?: ICategoria[];
 }
 
 export class Producto implements IProducto {
@@ -22,7 +27,9 @@ export class Producto implements IProducto {
         public stock?: number,
         public detalle?: string,
         public visible?: boolean,
-        public estado?: Estado
+        public estado?: Estado,
+        public marcas?: IMarca[],
+        public categorias?: ICategoria[]
     ) {
         this.visible = this.visible || false;
     }

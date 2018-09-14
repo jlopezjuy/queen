@@ -12,6 +12,9 @@ import org.mapstruct.*;
 public interface ProductoMapper extends EntityMapper<ProductoDTO, Producto> {
 
 
+    @Mapping(target = "marcas", ignore = true)
+    @Mapping(target = "categorias", ignore = true)
+    Producto toEntity(ProductoDTO productoDTO);
 
     default Producto fromId(Long id) {
         if (id == null) {

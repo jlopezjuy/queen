@@ -22,7 +22,9 @@
             "stock": "Stock",
             "detalle": "Detalle",
             "visible": "Visible",
-            "estado": "Estado"
+            "estado": "Estado",
+            "marca": "Marca",
+            "categoria": "Categoria"
         }
     }
 }
