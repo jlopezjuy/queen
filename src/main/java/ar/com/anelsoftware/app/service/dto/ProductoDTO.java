@@ -31,6 +31,8 @@ public class ProductoDTO implements Serializable {
     @NotNull
     private Estado estado;
 
+    private Long empresaId;
+
     public Long getId() {
         return id;
     }
@@ -87,6 +89,14 @@ public class ProductoDTO implements Serializable {
         this.estado = estado;
     }
 
+    public Long getEmpresaId() {
+        return empresaId;
+    }
+
+    public void setEmpresaId(Long empresaId) {
+        this.empresaId = empresaId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -118,6 +128,7 @@ public class ProductoDTO implements Serializable {
             ", detalle='" + getDetalle() + "'" +
             ", visible='" + isVisible() + "'" +
             ", estado='" + getEstado() + "'" +
+            ", empresa=" + getEmpresaId() +
             "}";
     }
 }

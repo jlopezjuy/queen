@@ -22,7 +22,8 @@
             "stock": "Stock",
             "detalle": "Detalle",
             "visible": "Visible",
-            "estado": "Estado"
+            "estado": "Estado",
+            "empresa": "Empresa"
         }
     }
 }

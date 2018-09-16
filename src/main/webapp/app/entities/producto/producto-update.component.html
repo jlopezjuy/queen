@@ -85,6 +85,13 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="queenApp.producto.empresa" for="field_empresa">Empresa</label>
+                    <select class="form-control" id="field_empresa" name="empresa" [(ngModel)]="producto.empresaId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empresaOption.id" *ngFor="let empresaOption of empresas; trackBy: trackEmpresaById">{{empresaOption.id}}</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">

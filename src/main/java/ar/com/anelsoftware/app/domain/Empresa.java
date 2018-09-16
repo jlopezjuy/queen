@@ -1,5 +1,6 @@
 package ar.com.anelsoftware.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -9,6 +10,8 @@ import javax.validation.constraints.*;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -49,6 +52,10 @@ public class Empresa implements Serializable {
     @ManyToOne
     @JsonIgnoreProperties("")
     private User user;
+
+    @OneToMany(mappedBy = "empresa")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Producto> productos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -135,6 +142,31 @@ public class Empresa implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Set<Producto> getProductos() {
+        return productos;
+    }
+
+    public Empresa productos(Set<Producto> productos) {
+        this.productos = productos;
+        return this;
+    }
+
+    public Empresa addProducto(Producto producto) {
+        this.productos.add(producto);
+        producto.setEmpresa(this);
+        return this;
+    }
+
+    public Empresa removeProducto(Producto producto) {
+        this.productos.remove(producto);
+        producto.setEmpresa(null);
+        return this;
+    }
+
+    public void setProductos(Set<Producto> productos) {
+        this.productos = productos;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

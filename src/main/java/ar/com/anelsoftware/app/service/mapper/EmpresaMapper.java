@@ -16,6 +16,7 @@ public interface EmpresaMapper extends EntityMapper<EmpresaDTO, Empresa> {
     EmpresaDTO toDto(Empresa empresa);
 
     @Mapping(source = "userId", target = "user")
+    @Mapping(target = "productos", ignore = true)
     Empresa toEntity(EmpresaDTO empresaDTO);
 
     default Empresa fromId(Long id) {

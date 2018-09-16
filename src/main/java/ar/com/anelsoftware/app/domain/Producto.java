@@ -1,5 +1,6 @@
 package ar.com.anelsoftware.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -52,6 +53,10 @@ public class Producto implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "estado", nullable = false)
     private Estado estado;
+
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Empresa empresa;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -138,6 +143,19 @@ public class Producto implements Serializable {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public Producto empresa(Empresa empresa) {
+        this.empresa = empresa;
+        return this;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

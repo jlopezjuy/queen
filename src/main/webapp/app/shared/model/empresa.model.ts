@@ -1,3 +1,5 @@
+import { IProducto } from 'app/shared/model//producto.model';
+
 export interface IEmpresa {
     id?: number;
     nombre?: string;
@@ -7,6 +9,7 @@ export interface IEmpresa {
     rentas?: string;
     userLogin?: string;
     userId?: number;
+    productos?: IProducto[];
 }
 
 export class Empresa implements IEmpresa {
@@ -18,6 +21,7 @@ export class Empresa implements IEmpresa {
         public cuit?: string,
         public rentas?: string,
         public userLogin?: string,
-        public userId?: number
+        public userId?: number,
+        public productos?: IProducto[]
     ) {}
 }

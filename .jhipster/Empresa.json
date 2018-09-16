@@ -9,6 +9,12 @@
             "otherEntityField": "login",
             "ownerSide": true,
             "otherEntityRelationshipName": "empresa"
+        },
+        {
+            "relationshipName": "producto",
+            "otherEntityName": "producto",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "empresa"
         }
     ],
     "fields": [

@@ -22,7 +22,8 @@
             "telefono": "Telefono",
             "cuit": "Cuit",
             "rentas": "Rentas",
-            "user": "User"
+            "user": "User",
+            "producto": "Producto"
         }
     }
 }
