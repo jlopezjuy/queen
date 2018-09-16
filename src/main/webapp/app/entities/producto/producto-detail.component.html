@@ -35,6 +35,18 @@
                         <a [routerLink]="['/empresa', producto.empresaId, 'view']">{{producto.empresaId}}</a>
                     </div>
                 </dd>
+                <dt><span jhiTranslate="queenApp.producto.marca">Marca</span></dt>
+                <dd>
+                    <div *ngIf="producto.marcaId">
+                        <a [routerLink]="['/marca', producto.marcaId, 'view']">{{producto.marcaId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="queenApp.producto.categoria">Categoria</span></dt>
+                <dd>
+                    <div *ngIf="producto.categoriaId">
+                        <a [routerLink]="['/categoria', producto.categoriaId, 'view']">{{producto.categoriaId}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

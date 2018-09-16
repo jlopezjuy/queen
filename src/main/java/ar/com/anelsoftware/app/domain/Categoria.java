@@ -1,5 +1,6 @@
 package ar.com.anelsoftware.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -8,6 +9,8 @@ import javax.validation.constraints.*;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -31,6 +34,10 @@ public class Categoria implements Serializable {
 
     @Column(name = "visible")
     private Boolean visible;
+
+    @OneToMany(mappedBy = "categoria")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Producto> productos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -65,6 +72,31 @@ public class Categoria implements Serializable {
 
     public void setVisible(Boolean visible) {
         this.visible = visible;
+    }
+
+    public Set<Producto> getProductos() {
+        return productos;
+    }
+
+    public Categoria productos(Set<Producto> productos) {
+        this.productos = productos;
+        return this;
+    }
+
+    public Categoria addProducto(Producto producto) {
+        this.productos.add(producto);
+        producto.setCategoria(this);
+        return this;
+    }
+
+    public Categoria removeProducto(Producto producto) {
+        this.productos.remove(producto);
+        producto.setCategoria(null);
+        return this;
+    }
+
+    public void setProductos(Set<Producto> productos) {
+        this.productos = productos;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

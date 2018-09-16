@@ -14,5 +14,17 @@
                                  referencedColumnNames="id"
                                  referencedTableName="empresa"/>
 
+        <addForeignKeyConstraint baseColumnNames="marca_id"
+                                 baseTableName="producto"
+                                 constraintName="fk_producto_marca_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="marca"/>
+
+        <addForeignKeyConstraint baseColumnNames="categoria_id"
+                                 baseTableName="producto"
+                                 constraintName="fk_producto_categoria_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categoria"/>
+
     </changeSet>
 </databaseChangeLog>

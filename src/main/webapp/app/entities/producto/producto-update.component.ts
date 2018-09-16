@@ -8,6 +8,10 @@ import { IProducto } from 'app/shared/model/producto.model';
 import { ProductoService } from './producto.service';
 import { IEmpresa } from 'app/shared/model/empresa.model';
 import { EmpresaService } from 'app/entities/empresa';
+import { IMarca } from 'app/shared/model/marca.model';
+import { MarcaService } from 'app/entities/marca';
+import { ICategoria } from 'app/shared/model/categoria.model';
+import { CategoriaService } from 'app/entities/categoria';
 
 @Component({
     selector: 'jhi-producto-update',
@@ -19,10 +23,16 @@ export class ProductoUpdateComponent implements OnInit {
 
     empresas: IEmpresa[];
 
+    marcas: IMarca[];
+
+    categorias: ICategoria[];
+
     constructor(
         private jhiAlertService: JhiAlertService,
         private productoService: ProductoService,
         private empresaService: EmpresaService,
+        private marcaService: MarcaService,
+        private categoriaService: CategoriaService,
         private activatedRoute: ActivatedRoute
     ) {}
 
@@ -34,6 +44,18 @@ export class ProductoUpdateComponent implements OnInit {
         this.empresaService.query().subscribe(
             (res: HttpResponse<IEmpresa[]>) => {
                 this.empresas = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.marcaService.query().subscribe(
+            (res: HttpResponse<IMarca[]>) => {
+                this.marcas = res.body;
+            },
+            (res: HttpErrorResponse) => this.onError(res.message)
+        );
+        this.categoriaService.query().subscribe(
+            (res: HttpResponse<ICategoria[]>) => {
+                this.categorias = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
@@ -70,6 +92,14 @@ export class ProductoUpdateComponent implements OnInit {
     }
 
     trackEmpresaById(index: number, item: IEmpresa) {
+        return item.id;
+    }
+
+    trackMarcaById(index: number, item: IMarca) {
+        return item.id;
+    }
+
+    trackCategoriaById(index: number, item: ICategoria) {
         return item.id;
     }
     get producto() {

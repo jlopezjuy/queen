@@ -18,7 +18,8 @@
                 "title": "Marca"
             },
             "nombre": "Nombre",
-            "logo": "Logo"
+            "logo": "Logo",
+            "producto": "Producto"
         }
     }
 }

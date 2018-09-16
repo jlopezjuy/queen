@@ -37,6 +37,8 @@
             <th jhiSortBy="visible"><span jhiTranslate="queenApp.producto.visible">Visible</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="estado"><span jhiTranslate="queenApp.producto.estado">Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="empresaId"><span jhiTranslate="queenApp.producto.empresa">Empresa</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="marcaId"><span jhiTranslate="queenApp.producto.marca">Marca</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="categoriaId"><span jhiTranslate="queenApp.producto.categoria">Categoria</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -52,6 +54,16 @@
                 <td>
                     <div *ngIf="producto.empresaId">
                         <a [routerLink]="['../empresa', producto.empresaId , 'view' ]" >{{producto.empresaId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="producto.marcaId">
+                        <a [routerLink]="['../marca', producto.marcaId , 'view' ]" >{{producto.marcaId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="producto.categoriaId">
+                        <a [routerLink]="['../categoria', producto.categoriaId , 'view' ]" >{{producto.categoriaId}}</a>
                     </div>
                 </td>
                 <td class="text-right">

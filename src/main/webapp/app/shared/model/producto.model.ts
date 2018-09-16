@@ -13,6 +13,8 @@ export interface IProducto {
     visible?: boolean;
     estado?: Estado;
     empresaId?: number;
+    marcaId?: number;
+    categoriaId?: number;
 }
 
 export class Producto implements IProducto {
@@ -24,7 +26,9 @@ export class Producto implements IProducto {
         public detalle?: string,
         public visible?: boolean,
         public estado?: Estado,
-        public empresaId?: number
+        public empresaId?: number,
+        public marcaId?: number,
+        public categoriaId?: number
     ) {
         this.visible = this.visible || false;
     }

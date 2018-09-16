@@ -58,6 +58,14 @@ public class Producto implements Serializable {
     @JsonIgnoreProperties("")
     private Empresa empresa;
 
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Marca marca;
+
+    @ManyToOne
+    @JsonIgnoreProperties("")
+    private Categoria categoria;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -156,6 +164,32 @@ public class Producto implements Serializable {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public Producto marca(Marca marca) {
+        this.marca = marca;
+        return this;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public Producto categoria(Categoria categoria) {
+        this.categoria = categoria;
+        return this;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

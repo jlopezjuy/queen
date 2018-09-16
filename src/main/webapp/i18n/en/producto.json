@@ -23,7 +23,9 @@
             "detalle": "Detalle",
             "visible": "Visible",
             "estado": "Estado",
-            "empresa": "Empresa"
+            "empresa": "Empresa",
+            "marca": "Marca",
+            "categoria": "Categoria"
         }
     }
 }

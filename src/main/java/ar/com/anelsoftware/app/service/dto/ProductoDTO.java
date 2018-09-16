@@ -33,6 +33,10 @@ public class ProductoDTO implements Serializable {
 
     private Long empresaId;
 
+    private Long marcaId;
+
+    private Long categoriaId;
+
     public Long getId() {
         return id;
     }
@@ -97,6 +101,22 @@ public class ProductoDTO implements Serializable {
         this.empresaId = empresaId;
     }
 
+    public Long getMarcaId() {
+        return marcaId;
+    }
+
+    public void setMarcaId(Long marcaId) {
+        this.marcaId = marcaId;
+    }
+
+    public Long getCategoriaId() {
+        return categoriaId;
+    }
+
+    public void setCategoriaId(Long categoriaId) {
+        this.categoriaId = categoriaId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -129,6 +149,8 @@ public class ProductoDTO implements Serializable {
             ", visible='" + isVisible() + "'" +
             ", estado='" + getEstado() + "'" +
             ", empresa=" + getEmpresaId() +
+            ", marca=" + getMarcaId() +
+            ", categoria=" + getCategoriaId() +
             "}";
     }
 }

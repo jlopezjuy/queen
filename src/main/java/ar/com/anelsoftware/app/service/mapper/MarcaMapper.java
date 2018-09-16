@@ -12,6 +12,8 @@ import org.mapstruct.*;
 public interface MarcaMapper extends EntityMapper<MarcaDTO, Marca> {
 
 
+    @Mapping(target = "productos", ignore = true)
+    Marca toEntity(MarcaDTO marcaDTO);
 
     default Marca fromId(Long id) {
         if (id == null) {

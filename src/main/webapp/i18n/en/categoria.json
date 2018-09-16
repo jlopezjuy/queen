@@ -18,7 +18,8 @@
                 "title": "Categoria"
             },
             "nombre": "Nombre",
-            "visible": "Visible"
+            "visible": "Visible",
+            "producto": "Producto"
         }
     }
 }
