@@ -13,13 +13,13 @@ import {
     UserMgmtUpdateComponent,
     UserMgmtDeleteDialogComponent,
     LogsComponent,
-    JhiMetricsMonitoringModalComponent,
-    JhiMetricsMonitoringComponent,
-    JhiHealthModalComponent,
-    JhiHealthCheckComponent,
-    JhiConfigurationComponent,
-    JhiDocsComponent,
-    JhiTrackerComponent
+    QueenMetricsMonitoringModalComponent,
+    QueenMetricsMonitoringComponent,
+    QueenHealthModalComponent,
+    QueenHealthCheckComponent,
+    QueenConfigurationComponent,
+    QueenDocsComponent,
+    QueenTrackerComponent
 } from './';
 
 @NgModule({
@@ -35,15 +35,15 @@ import {
         UserMgmtUpdateComponent,
         UserMgmtDeleteDialogComponent,
         LogsComponent,
-        JhiConfigurationComponent,
-        JhiHealthCheckComponent,
-        JhiHealthModalComponent,
-        JhiDocsComponent,
-        JhiTrackerComponent,
-        JhiMetricsMonitoringComponent,
-        JhiMetricsMonitoringModalComponent
+        QueenConfigurationComponent,
+        QueenHealthCheckComponent,
+        QueenHealthModalComponent,
+        QueenDocsComponent,
+        QueenTrackerComponent,
+        QueenMetricsMonitoringComponent,
+        QueenMetricsMonitoringModalComponent
     ],
-    entryComponents: [UserMgmtDeleteDialogComponent, JhiHealthModalComponent, JhiMetricsMonitoringModalComponent],
+    entryComponents: [UserMgmtDeleteDialogComponent, QueenHealthModalComponent, QueenMetricsMonitoringModalComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class QueenAdminModule {

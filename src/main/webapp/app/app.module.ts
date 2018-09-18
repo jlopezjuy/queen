@@ -19,13 +19,13 @@ import { QueenAccountModule } from './account/account.module';
 import { QueenEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { QueenMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 
 @NgModule({
     imports: [
         BrowserModule,
         QueenAppRoutingModule,
-        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
+        Ng2Webstorage.forRoot({ prefix: 'queen', separator: '-' }),
         QueenSharedModule,
         QueenCoreModule,
         QueenHomeModule,
@@ -33,7 +33,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         QueenEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [QueenMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
@@ -60,7 +60,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
             deps: [Injector]
         }
     ],
-    bootstrap: [JhiMainComponent]
+    bootstrap: [QueenMainComponent]
 })
 export class QueenAppModule {
     constructor(private dpConfig: NgbDatepickerConfig) {

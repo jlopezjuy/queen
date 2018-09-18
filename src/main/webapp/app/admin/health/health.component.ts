@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { JhiHealthService } from './health.service';
-import { JhiHealthModalComponent } from './health-modal.component';
+import { QueenHealthService } from './health.service';
+import { QueenHealthModalComponent } from './health-modal.component';
 
 @Component({
-    selector: 'jhi-health',
+    selector: 'queen-health',
     templateUrl: './health.component.html'
 })
-export class JhiHealthCheckComponent implements OnInit {
+export class QueenHealthCheckComponent implements OnInit {
     healthData: any;
     updatingHealth: boolean;
 
-    constructor(private modalService: NgbModal, private healthService: JhiHealthService) {}
+    constructor(private modalService: NgbModal, private healthService: QueenHealthService) {}
 
     ngOnInit() {
         this.refresh();
@@ -48,7 +48,7 @@ export class JhiHealthCheckComponent implements OnInit {
     }
 
     showHealth(health: any) {
-        const modalRef = this.modalService.open(JhiHealthModalComponent);
+        const modalRef = this.modalService.open(QueenHealthModalComponent);
         modalRef.componentInstance.currentHealth = health;
         modalRef.result.then(
             result => {

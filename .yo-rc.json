@@ -30,7 +30,7 @@
       "gatling",
       "cucumber"
     ],
-    "jhiPrefix": "jhi",
+    "jhiPrefix": "queen",
     "otherModules": [
       {
         "name": "generator-jhipster-docker",

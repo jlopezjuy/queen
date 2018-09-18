@@ -7,6 +7,7 @@ import ar.com.anelsoftware.app.service.EmpresaService;
 import ar.com.anelsoftware.app.domain.Empresa;
 import ar.com.anelsoftware.app.repository.EmpresaRepository;
 import ar.com.anelsoftware.app.repository.search.EmpresaSearchRepository;
+import ar.com.anelsoftware.app.service.UserService;
 import ar.com.anelsoftware.app.service.dto.EmpresaDTO;
 import ar.com.anelsoftware.app.service.mapper.EmpresaMapper;
 import org.slf4j.Logger;
@@ -20,7 +21,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-import static ar.com.anelsoftware.app.security.SecurityUtils.getCurrentUserLogin;
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
 /**
@@ -40,13 +40,16 @@ public class EmpresaServiceImpl implements EmpresaService {
 
     private final EmpresaSearchRepository empresaSearchRepository;
 
+    private final UserService userService;
+
     public EmpresaServiceImpl(EmpresaRepository empresaRepository,
         UserRepository userRepository, EmpresaMapper empresaMapper,
-        EmpresaSearchRepository empresaSearchRepository) {
+        EmpresaSearchRepository empresaSearchRepository, UserService userService) {
         this.empresaRepository = empresaRepository;
         this.userRepository = userRepository;
         this.empresaMapper = empresaMapper;
         this.empresaSearchRepository = empresaSearchRepository;
+        this.userService = userService;
     }
 
     /**

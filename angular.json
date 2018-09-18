@@ -19,12 +19,12 @@
       "inlineStyle": true,
       "inlineTemplate": false,
       "spec": false,
-      "prefix": "jhi",
-      "styleExt": "css"
+      "prefix": "queen",
+      "styleExt": "scss"
     },
     "@schematics/angular:directive": {
       "spec": false,
-      "prefix": "jhi"
+      "prefix": "queen"
     },
     "@schematics/angular:guard": {
       "spec": false

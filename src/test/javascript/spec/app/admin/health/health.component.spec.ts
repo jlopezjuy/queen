@@ -3,28 +3,28 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
 
 import { QueenTestModule } from '../../../test.module';
-import { JhiHealthCheckComponent } from 'app/admin/health/health.component';
-import { JhiHealthService } from 'app/admin/health/health.service';
+import { QueenHealthCheckComponent } from 'app/admin/health/health.component';
+import { QueenHealthService } from 'app/admin/health/health.service';
 
 describe('Component Tests', () => {
-    describe('JhiHealthCheckComponent', () => {
-        let comp: JhiHealthCheckComponent;
-        let fixture: ComponentFixture<JhiHealthCheckComponent>;
-        let service: JhiHealthService;
+    describe('QueenHealthCheckComponent', () => {
+        let comp: QueenHealthCheckComponent;
+        let fixture: ComponentFixture<QueenHealthCheckComponent>;
+        let service: QueenHealthService;
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
                 imports: [QueenTestModule],
-                declarations: [JhiHealthCheckComponent]
+                declarations: [QueenHealthCheckComponent]
             })
-                .overrideTemplate(JhiHealthCheckComponent, '')
+                .overrideTemplate(QueenHealthCheckComponent, '')
                 .compileComponents();
         }));
 
         beforeEach(() => {
-            fixture = TestBed.createComponent(JhiHealthCheckComponent);
+            fixture = TestBed.createComponent(QueenHealthCheckComponent);
             comp = fixture.componentInstance;
-            service = fixture.debugElement.injector.get(JhiHealthService);
+            service = fixture.debugElement.injector.get(QueenHealthService);
         });
 
         describe('baseName and subSystemName', () => {

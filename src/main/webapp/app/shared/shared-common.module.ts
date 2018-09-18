@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { QueenSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent } from './';
+import { QueenSharedLibsModule, FindLanguageFromKeyPipe, QueenAlertComponent, QueenAlertErrorComponent } from './';
 
 @NgModule({
     imports: [QueenSharedLibsModule],
-    declarations: [FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent],
-    exports: [QueenSharedLibsModule, FindLanguageFromKeyPipe, JhiAlertComponent, JhiAlertErrorComponent]
+    declarations: [FindLanguageFromKeyPipe, QueenAlertComponent, QueenAlertErrorComponent],
+    exports: [QueenSharedLibsModule, FindLanguageFromKeyPipe, QueenAlertComponent, QueenAlertErrorComponent]
 })
 export class QueenSharedCommonModule {}

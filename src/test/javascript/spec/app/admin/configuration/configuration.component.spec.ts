@@ -3,31 +3,31 @@ import { of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import { QueenTestModule } from '../../../test.module';
-import { JhiConfigurationComponent } from 'app/admin/configuration/configuration.component';
-import { JhiConfigurationService } from 'app/admin/configuration/configuration.service';
+import { QueenConfigurationComponent } from 'app/admin/configuration/configuration.component';
+import { QueenConfigurationService } from 'app/admin/configuration/configuration.service';
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { Log } from 'app/admin';
 
 describe('Component Tests', () => {
-    describe('JhiConfigurationComponent', () => {
-        let comp: JhiConfigurationComponent;
-        let fixture: ComponentFixture<JhiConfigurationComponent>;
-        let service: JhiConfigurationService;
+    describe('QueenConfigurationComponent', () => {
+        let comp: QueenConfigurationComponent;
+        let fixture: ComponentFixture<QueenConfigurationComponent>;
+        let service: QueenConfigurationService;
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
                 imports: [QueenTestModule],
-                declarations: [JhiConfigurationComponent],
-                providers: [JhiConfigurationService]
+                declarations: [QueenConfigurationComponent],
+                providers: [QueenConfigurationService]
             })
-                .overrideTemplate(JhiConfigurationComponent, '')
+                .overrideTemplate(QueenConfigurationComponent, '')
                 .compileComponents();
         }));
 
         beforeEach(() => {
-            fixture = TestBed.createComponent(JhiConfigurationComponent);
+            fixture = TestBed.createComponent(QueenConfigurationComponent);
             comp = fixture.componentInstance;
-            service = fixture.debugElement.injector.get(JhiConfigurationService);
+            service = fixture.debugElement.injector.get(QueenConfigurationService);
         });
 
         describe('OnInit', () => {

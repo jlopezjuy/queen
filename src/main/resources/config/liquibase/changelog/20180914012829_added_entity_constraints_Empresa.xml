@@ -12,7 +12,7 @@
                                  baseTableName="empresa"
                                  constraintName="fk_empresa_user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="jhi_user"/>
+                                 referencedTableName="queen_user"/>
 
     </changeSet>
 </databaseChangeLog>
