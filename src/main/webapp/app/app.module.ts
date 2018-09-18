@@ -3,7 +3,7 @@ import './vendor.ts';
 import { NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
+import {NgbDatepickerConfig, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Ng2Webstorage, LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 import { JhiEventManager } from 'ng-jhipster';
 
@@ -18,8 +18,21 @@ import { QueenHomeModule } from './home/home.module';
 import { QueenAccountModule } from './account/account.module';
 import { QueenEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { QueenMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import {AgmCoreModule} from '@agm/core';
+import {SpinnerComponent} from 'app/shared/spinner.component';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+    suppressScrollX: true,
+    wheelSpeed: 1,
+    wheelPropagation: true,
+    minScrollbarLength: 20
+};
 
 @NgModule({
     imports: [
@@ -30,10 +43,14 @@ import { QueenMainComponent, NavbarComponent, FooterComponent, PageRibbonCompone
         QueenCoreModule,
         QueenHomeModule,
         QueenAccountModule,
-        QueenEntityModule
+        QueenEntityModule,
+        NgbModule.forRoot(),
+        SlimLoadingBarModule.forRoot(),
+        // PerfectScrollbarModule,
+        AgmCoreModule.forRoot({ apiKey: 'AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0' })
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [QueenMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [SpinnerComponent, QueenMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
